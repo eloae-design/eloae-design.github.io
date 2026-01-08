@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="items-container" id="items-container">
+        <table class="product-list" id="product-list">
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+    </div> -->
+
+    <div>
+        <h1>Coming Soon...</h1>
+    </div>
+</body>
+<script>
+    let table = document.getElementById("product-list");
+    let items = ""
+    let pullData = async () => {
+        let product = await fetch("https://fakestoreapi.com/products");
+        let result = await product.json();
+        console.log(result);
+        }
+    
+</script>
+
+
+</html>

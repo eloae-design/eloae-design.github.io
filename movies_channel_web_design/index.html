@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            height: 60px;
+            padding:0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: orange;
+        }
+        .logo>h1{
+            padding: 20px;
+            transition: .7s;
+        }
+        .logo>h1:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            padding:1rem;
+            
+        }
+        ul, li{
+            text-decoration: none;
+            list-style-type: none;
+            margin-right: 20px;
+        }
+        ul>li>a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        ul>li {
+            border-radius: 7px;
+            margin: 1px;
+            padding:10px;
+            transition: 0.3s;
+        }
+
+        ul>li:hover {
+            background-color: red;
+        }
+
+        .card-container {
+            
+            display:flex;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            
+        }
+        .card {
+            height: 100%;
+            margin-top: 20px;
+            margin-left: 5px;
+            margin-right: 5px;
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            
+        }
+        .card>img {
+            margin: 5%;
+            width: auto;
+            height: 80%;
+            border-radius: 7px;
+            transition:.4s;
+            box-shadow: 2px 2px 5px 0px rgba(105, 105, 105, 0.3);;
+        }
+
+        .card>img:hover {
+            transform: scale(1.1);
+        }
+        .card>button {
+            width: 80%;
+            background-color: gray;
+            border:none;
+            border-radius: 7px;
+        }
+        .card>button:hover {
+            transform: scale(1.1);
+            background-color: rgb(62, 58, 58);
+        }
+
+        .movie-cover {
+            margin:auto;
+            max-width: 800px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/cover.jfif');
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+        hr {
+            width :70%;
+            color:white;
+        }
+
+        footer { 
+            text-align:center;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Dragon Movies Channel</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="movie-cover">
+        <h1>DRAGON MOVIES CHANNEL</h1>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="./images/image0.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+        
+        <div class="card">
+            <img src="./images/image1.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image2.jfif" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image3.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image4.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image5.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image6.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image3.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image0.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+        <div class="card">
+            <img src="./images/image5.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+        
+        <div class="card">
+            <img src="./images/image1.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image2.jfif" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image3.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image4.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image5.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image6.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/image0.jpg" alt="">
+            <button>Watch Now</button>
+        </div>
+    </div>
+    <hr>
+    <footer><span>Thank you for visiting My Web Page.</span></footer>
+</body>
+</html>
