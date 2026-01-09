@@ -5,35 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        .items-container {
+            padding-top: 20px;
+        }
+        .product-list{
+            width: 90%;
+            min-width: 700px;
+            margin:auto;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: darkblue;
+            color:white;
+            font-weight: bolder;
+            border: 1px solid brown;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            max-width: 80%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td img {
+            height: 40px;
         }
     </style>
+
 </head>
 <body>
-    <!-- <div class="items-container" id="items-container">
+
+    <div class="items-container" id="items-container">
         <table class="product-list" id="product-list">
             <tr>
-                <th></th>
+                <th>No.</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <th>PHOTO</th>
             </tr>
+<!-- 
+            <tr>
+                <td>No.</td>
+                <td>NAME</td>
+                <td>PRICE</td>
+                <td>CATEGORY</td>
+                <td>PHOTO</td> 
+            </tr>-->
         </table>
-    </div> -->
-
-    <div>
-        <h1>Coming Soon...</h1>
     </div>
 </body>
 <script>
     let table = document.getElementById("product-list");
-    let items = ""
-    let pullData = async () => {
-        let product = await fetch("https://fakestoreapi.com/products");
-        let result = await product.json();
-        console.log(result);
-        }
+    var tabledata = `<tr>
+                <th>No.</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <th>PHOTO</th>
+            </tr>`;
+    
+    async function getData() {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const result = await response.json();
+        result.forEach((data) => {
+            tabledata += `<tr>
+                <td>${data.id}</td>
+                <td>${data.title}</td>
+                <td>${data.price}</td>
+                <td>${data.category}</td>
+                <td><img src="${data.image}"></td> 
+            </tr>`;
+        });
+        table.innerHTML=tabledata;
+    } 
+    getData();
     
 </script>
 
