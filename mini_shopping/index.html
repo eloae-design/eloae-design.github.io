@@ -34,10 +34,24 @@
         td img {
             height: 40px;
         }
+
+        .searchData{
+            display: flex;
+            justify-content: center;
+        }
+
+        .searchKey{
+            border-radius: 7px;
+            padding: 5px;
+        }
     </style>
 
 </head>
 <body>
+
+    <div class="searchData" id="searchData">
+        <input onkeyup="search()" type="text" class="searchKey" id="searchKey" placeholder="Product's Name">
+    </div>
 
     <div class="items-container" id="items-container">
         <table class="product-list" id="product-list">
@@ -61,7 +75,7 @@
 </body>
 <script>
     let table = document.getElementById("product-list");
-    var tabledata = `<tr>
+    let tabledata = `<tr>
                 <th>No.</th>
                 <th>NAME</th>
                 <th>PRICE</th>
@@ -80,11 +94,31 @@
                 <td>${data.category}</td>
                 <td><img src="${data.image}"></td> 
             </tr>`;
+            
         });
         table.innerHTML=tabledata;
     } 
     getData();
     
+    function search() {
+        let input=document.getElementById("searchKey").value.toLowerCase();
+        let table = document.getElementById("product-list");
+        let tr = table.getElementsByTagName("tr");
+
+        for (let i=0; i<tr.length; i++) {
+            let td = tr[i].getElementsByTagName('td')[1];
+
+            if(td){
+                productName = td.innerText.toLowerCase();
+                if(productName.indexOf(input) >-1){
+                    tr[i].style.display=""
+                }else {
+                    tr[i].style.display="none";
+                }
+            }
+        }
+        
+    }
 </script>
 
 
